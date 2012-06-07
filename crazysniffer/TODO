@@ -1,0 +1,8 @@
+---:[ Crazysniffer TODO
+
+!!!program crashes if network device couldn't be opened!!!
+Mail mode should save mails in Mbox format
+Implement FTP, NFS, SMB, Web, ICQ and IRC modes
+"driftnet" mode
+
+

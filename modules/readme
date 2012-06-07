@@ -1,0 +1,41 @@
+            ______       _______       _______      _______     
+           |   __ \     |   _   |     |_     _|    |   |   |    
+           |    __/ __  |       | __    |   | __   |       | __ 
+           |___|   |__| |___|___||__|   |___||__|  |___|___||__|
+
+            Perl         Advanced        TCP         Hijacking
+
+                    The hijackers P.A.T.H. to galaxy
+                    [http://p-a-t-h.sourceforge.net]
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+P.A.T.H. core modules
+
+Programmed by Bastian Ballmann and Stefan Krecher
+Last Update: 29.11.2003
+
+This program is free software; you can redistribute it and/or modify it under 
+the terms of the GNU General Public License version 2 as published by the Free
+Software Foundation.
+
+This program is distributed in the hope that it will be useful, but WITHOUT 
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
+FOR A PARTICULAR PURPOSE. 
+See the GNU General Public License for more details. 
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+These modules implement the core features of the P.A.T.H. project.
+At the moment there are two core modules: config.pm and hijack.pm.
+
+The config.pm module is used to configure the scripts and to ensure that
+every modules will be configured with the same parameters. It also offers
+functions to check if an ip or mac address is valid.
+
+All the hijacking stuff used in the P.A.T.H. project is placed in the 
+hijack.pm module.
+
+Everys module usage is descriped in the POD documentation of that module.
+
+:[EOF

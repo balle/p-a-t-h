@@ -1,0 +1,67 @@
+            ______       _______       _______      _______     
+           |   __ \     |   _   |     |_     _|    |   |   |    
+           |    __/ __  |       | __    |   | __   |       | __ 
+           |___|   |__| |___|___||__|   |___||__|  |___|___||__|
+
+            Perl         Advanced        TCP        Hijacking
+
+                    The hijackers P.A.T.H. to galaxy
+                    [http://p-a-t-h.sourceforge.net]
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Feed SN0RT
+
+Programmed by Bastian Ballmann
+Last Update: 26.11.2003
+Licensed under the GPL
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+---:[ Requirements
+
+Perl
+Net::RawIP
+Snort Rulefiles
+
+
+---:[ Disclaimer
+
+THIS PROJECT WAS DEVELOPED FOR TESTING AND DEMONSTRATION PURPOSE ONLY! 
+THE AUTHORS DONT FEEL RESPONSIBLE FOR ILLEGAL ABUSE OF THIS PIECE OF 
+SOFTWARE AND WE ADVICE YOU TO USE IT LEGALLY AND DO NOT BREAK THE LAW!
+
+
+---:[ Description
+
+Feed_snort floods a SN0RT (and other) IDS System with packets, which simulate
+an attack, created using SN0RT rule files.
+Therefore this script can be very useful to check your current SN0RT 
+configuration and demonstrates why you should keep the timeout of guardian.pl 
+and other so called intrusion prevention systems at a low limit to avoid abuse 
+like starting a DOS attack onto your IDS!
+You can specify a list / range of sources / targets (see examples).
+
+
+---:[ Installation
+
+If your system supports Perl just install the required modules. 
+
+
+---:[ Usage
+
+Run ./feed_snort.pl --help to get help.
+
+
+---:[ Examples
+
+This will flood 192.168.0.254 and it looks like the attack is coming from
+the ip range 192.168.0.1-192.168.0.50
+feed_snort.pl -r /etc/snort/rules -s 192.168.0.1-192.168.0.50 -h 192.168.0.254
+
+This will flood the ips 192.168.0.253 and 192.168.0.254 and it seems that they
+are attacking themselves
+feed_snort.pl -r /etc/snort/rules -h 192.168.0.253,192.168.0.254
+
+:[EOF

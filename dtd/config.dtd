@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<!--
+
+DTD for P.A.T.H. configuration
+Programmed by Bastian Ballmann
+Last update: 13.02.2004
+
+-->
+
+<!-- root element -->
+<!ELEMENT config (parameter, packet?)>
+
+<!-- parameter elements -->
+<!ELEMENT parameter (device, 
+		     protocol?, 
+                     number?, 
+                     brute?, 
+                     connection?, 
+                     host?, 
+                     port?, 
+                     wait?, 
+                     loop?, 
+                     pcap?, 
+                     grep?, 
+                     snaplen?, 
+                     crazysniffer?, 
+                     feedsnort?,
+                     hijackd?,
+                     icmpredir?)>
+
+<!ELEMENT device (#CDATA)>
+<!ELEMENT protocol (#CDATA)>
+<!ELEMENT number (#CDATA)>
+<!ELEMENT brute (#CDATA)>
+<!ELEMENT connection (#CDATA)>
+<!ELEMENT host (#CDATA)>
+<!ELEMENT port (#CDATA)>
+<!ELEMENT wait (#CDATA)>
+<!ELEMENT loop (#CDATA)>
+<!ELEMENT pcap (#CDATA)>
+<!ELEMENT grep (#CDATA)>
+<!ELEMENT snaplen (#CDATA)>
+
+<!-- Bruteforcing -->
+<!ELEMENT brute (srcport?, dstport?, icmp?)>
+
+<!-- Crazysniffer element -->
+<!ELEMENT crazysniffer (print?, mode?)>
+
+<!-- Crazy sniffer print methods -->
+<!ELEMENT print (seq?, flags?, winsize?, hex?)>
+<!ELEMENT seq (0|1)>
+<!ELEMENT flags (0|1)>
+<!ELEMENT winsize (0|1)>
+<!ELEMENT hex (0|1)>
+
+<!-- Crazy sniffer sniffin mode -->
+<!ELEMENT mode (password?, telnet?, email?)>
+<!ELEMENT password (0|1)>
+<!ELEMENT telnet (0|1)>
+<!ELEMENT email (0|1)>
+
+<!-- Feed SN0RT elements -->
+<!ELEMENT feedsnort (rules, ports?)>
+<!ELEMENT rules (#CDATA)>
+<!ELEMENT ports (http?, shellcode?, oracle?)>
+<!ELEMENT http (#CDATA)>
+<!ELEMENT shellcode (#CDATA)>
+<!ELEMENT oracle (#CDATA)>
+
+<!-- hijackd elements -->
+<!ELEMENT hijackd (infiltrate?)>
+<!ELEMENT infiltrate (#PCDATA)>
+
+<!-- icmpredir elements -->
+<!ELEMENT icmpredir (oldgw, newgw, route)>
+<!ELEMENT oldgw (#CDATA)>
+<!ELEMENT newgw (#CDATA)>
+<!ELEMENT route (#CDATA)>
+
+<!-- packet elements -->
+<!ELEMENT packet (ip, tcp?, udp?, icmp?, arp?, data?)>
+
+<!-- IP elements -->
+<!ELEMENT ip (srcip?, dstip, frag?, ttl?)>
+<!ELEMENT srcip (#CDATA)>
+<!ELEMENT dstip (#CDATA)>
+<!ELEMENT frag (#CDATA)>
+<!ELEMENT ttl (#CDATA)>
+
+<!-- TCP elements -->
+<!ELEMENT tcp (srcport, dstport, flags?, seq?, ack?)>
+<!ELEMENT srcport (#CDATA)>
+<!ELEMENT dstport (#CDATA)>
+<!ELEMENT seq (#CDATA)>
+<!ELEMENT ack (#CDATA)>
+<!ELEMENT flags (syn, ack, psh, fin, rst, urg)>
+<!ELEMENT syn (0|1)>
+<!ELEMENT ack (0|1)>
+<!ELEMENT psh (0|1)>
+<!ELEMENT fin (0|1)>
+<!ELEMENT rst (0|1)>
+<!ELEMENT urg (0|1)>
+
+<!-- UDP elements -->
+<!ELEMENT udp (srcport, dstport)>
+
+<!-- ICMP elements -->
+<!ELEMENT icmp (type, code, gateway?, mtu? | #CDATA)>
+<!ELEMENT type (#CDATA)>
+<!ELEMENT code (#CDATA)>
+<!ELEMENT gateway (#CDATA)>
+<!ELEMENT mtu (#CDATA)>
+
+<!-- ARP elements -->
+<!ELEMENT arp (srcmac, dstmac, op?)>
+<!ELEMENT srcmac (#CDATA)>
+<!ELEMENT dstmac (#CDATA)>
+<!ELEMENT op (#CDATA)>
+
+<!-- data element -->
+<!ELEMENT data (#PCDATA)>

@@ -1,0 +1,55 @@
+            ______       _______       _______      _______     
+           |   __ \     |   _   |     |_     _|    |   |   |    
+           |    __/ __  |       | __    |   | __   |       | __ 
+           |___|   |__| |___|___||__|   |___||__|  |___|___||__|
+
+            Perl         Advanced        TCP        Hijacking
+
+                    The hijackers P.A.T.H. to galaxy
+                    [http://p-a-t-h.sourceforge.net]
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Hijackd
+
+Programmed by Bastian Ballmann
+Last Update: 22.11.2003
+Licensend under the GPL
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+---:[ Requirements
+
+Perl
+Net::RawIP
+NetPacket
+Net::PcapUtils
+Pcap library
+
+
+---:[ Disclaimer
+
+THIS PROJECT WAS DEVELOPED FOR TESTING AND DEMONSTRATION PURPOSE ONLY! 
+THE AUTHORS DONT FEEL RESPONSIBLE FOR ILLEGAL ABUSE OF THIS PIECE OF 
+SOFTWARE AND WE ADVICE YOU TO USE IT LEGALLY AND DO NOT BREAK THE LAW!
+
+
+---:[ Description
+
+Hijackd is a daemon for automatically hijacking plain protocols.
+Please note: If you dont specify an infiltrate string hijackd will use a
+string which adds a user to /etc/passwd and /etc/shadow. The user is called
+hacker and the password is also hacker.
+
+
+---:[ Installation
+
+Get the required Perl modules from CPAN [ http://www.cpan.org ] and install 
+them. Download libcap from www.tcpdump.org and compile it.
+
+
+---:[ Usage
+
+Run ./hijackd --help to get help.
+
+:[EOF

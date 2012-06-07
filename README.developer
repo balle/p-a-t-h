@@ -1,0 +1,48 @@
+            ______       _______       _______      _______     
+           |   __ \     |   _   |     |_     _|    |   |   |    
+           |    __/ __  |       | __    |   | __   |       | __ 
+           |___|   |__| |___|___||__|   |___||__|  |___|___||__|
+
+            Perl         Advanced        TCP         Hijacking
+
+                    The hijackers P.A.T.H. to galaxy
+                    [http://p-a-t-h.sourceforge.net]
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Programmed by Bastian Ballmann and Stefan Krecher
+Last Update: 23.12.2003
+
+This program is free software; you can redistribute it and/or modify it under 
+the terms of the GNU General Public License version 2 as published by the Free
+Software Foundation.
+
+This program is distributed in the hope that it will be useful, but WITHOUT 
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
+FOR A PARTICULAR PURPOSE. 
+See the GNU General Public License for more details. 
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Dear developer!
+Here you can find some information on how to help developing the P.A.T.H.
+project.
+First of all there is a central Perl module to configure all scripts called 
+config.pm. 
+You can find it in the modules sub directory. To get some information about 
+the usage of this module please read the POD documentation at the end of that 
+module or install it like other Perl modules and run perldoc path::config.
+It's not only used for configuration stuff but also to check if ip and mac
+addresses were valid.
+The hijacking stuff is placed in the hijack.pm module which is also located
+at the modules subdirectory. It includes the config module for configuration.
+Please have a look at the POD documentation for more information about using
+that module.
+Last but not least there is an ARP module to create ARP packets in Perl or
+to determine the mac address on a local ethernet network interface.
+All scripts and modules / libraries are licensed under the GPL, so feel free 
+to make changes, but dont break the GPL license!
+If you want to help us developing this project you may contact us by email,
+you can find the addresses and Gnupg public keys in the file AUTHORS.
+
+:[EOF

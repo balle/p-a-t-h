@@ -1,0 +1,4 @@
+---:[ ip-packet TODO
+
+Send payload as ascii or hex (the problem is the underlying Net::RawIP
+only supports ascii payload)

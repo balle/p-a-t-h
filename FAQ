@@ -1,0 +1,257 @@
+            ______       _______       _______      _______     
+           |   __ \     |   _   |     |_     _|    |   |   |    
+           |    __/ __  |       | __    |   | __   |       | __ 
+           |___|   |__| |___|___||__|   |___||__|  |___|___||__|
+
+            Perl         Advanced        TCP        Hijacking
+
+                    The hijackers P.A.T.H. to galaxy
+                    [http://p-a-t-h.sourceforge.net]
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+P.A.T.H. FAQ 
+Version 0.4
+Written by Bastian Ballmann [ Crazydj@chaostal.de ]
+Last update: 24.07.2004
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+[NOTE]
+
+If you want to add some stuff to this FAQ please send an email to 
+Crazydj@chaostal.de
+Subject should be something like: P.A.T.H. FAQ
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Frequently ask questions about the P.A.T.H. project
+
+[1] General questions
+
+Q: What is the P.A.T.H. project about?
+Q: What is it good for?
+Q: Why did you program it?
+Q: But there are also some other hijacking projects out there. So why did you 
+programmed all this stuff on your own?
+Q: Where can I find the tools?
+Q: Where can I find more documentation?
+Q: Where can I ask questions?
+Q: How to report a bug I have found in a tool?
+Q: How can I support the P.A.T.H. project?
+Q: What is the General Public License?
+
+
+[2] Installation
+
+Q: How to install P.A.T.H.?
+Q: What do I need to install to use the P.A.T.H. project?
+Q: Where can I get the Perl modules?
+Q: On which OS can I install P.A.T.H.?
+Q: There is more than one Tk module. Which do I have to install?
+Q: How to install the Perl modules?
+Q: I called perl -MCPAN -e 'force install <module>' and now I
+have to configure something?
+Q: The installation of a Perl module fails! What shall I do?
+
+
+[3] Usage
+
+Q: I get the error: bad interpreter: No such file or directory
+Q: How can I start the GUI version of a tool?
+Q: How can I configure the tools?
+Q: What are EUID 0 privileges and why do I need them?
+Q: I get sendto() at /usr/local/lib/perl/5.8.2/Net/RawIP.pm line 550?
+Q: What are pcap expression?
+Q: What documentation should I read before using P.A.T.H.?
+
+
+[4] Developer question
+
+Q: How can I help developing the project?
+Q: Where can I find information about the P.A.T.H Perl modules?
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+[1] General questions
+
+Q: What is the P.A.T.H. project about?
+A: The P.A.T.H. project is a collection of tools for inspecting and hijacking
+network connections written in Perl. If you dont know what network hijacking
+is here is a short explanation of my own: 
+With network hijacking you can hijack a foreign network connection and use it 
+as your own, but it also includes inspecting and watching connections and
+reacting on special kinds of network events.
+
+Q: What is it good for?
+A: Well first of all it's good for rescuing the world from being attacked by
+nasty aliens. But if you're tricky you can also use it to test your firewall 
+and IDS rules, sniff your network traffic and hopefully demonstrate your users 
+why you as a security administrator don't like plain protocols like telnet, 
+SMTP and FTP. Additionally you can block (reset) unwanted traffic in your 
+internal network without the use of a firewall or subneting or something like 
+that. Last but not least you can implement man-in-the-middle attacks by either
+poisoning the targets arp cache using ARP reply packets or changing the targets
+gateway using ICMP redirect messages.
+Maybe it can help you impressing your girlfriend and friends.
+Use it what you think it's good for. ;)
+
+Q: Why did you program it?
+A: Short answer: It's fun! =)
+Longer answer: I also programmed it to have some tools on hand that show why 
+one shouldn't use plain protocols like Telnet, SMTP or FTP. 
+
+Q: But there are also some other hijacking projects out there. So why did you 
+program all this stuff on your own?
+A: The other hijacking projects like ettercap and dsniff are all programmed in 
+C. I just wanted to reimplement them in my favourite language Perl.
+
+Q: Where can I find the tools?
+A: Every tool has got it's own subdirectory. For example the source of the 
+packetgenerator can be found in the subdirectory IP-Packet. If you just 
+want to execute the tools type ip-packet.pl or whatever you want to execute
+at your next shell prompt. If you wonder where the tools are located have a
+looked at /usr/local/bin.
+
+Q: Where can I find more documentation?
+A: Please read the readme of the tool you want to use. There are also some 
+RFCs and additional documentation located in the docs subdirectory.
+If you're still searching for more information visit http://www.crazydj.de
+and http://www.krecher.de
+
+Q: Where can I ask questions?
+A: Please use my forum: forum.geektown.de Or have a look at the P.A.T.H. 
+project page: p-a-t-h.sourceforge.net
+
+Q: How to report a bug I have found in a tool?
+A: First of all please have a look at KNOWN_BUGS  before reporting anything. 
+If you have really found a new bug please post it at the P.A.T.H. forum 
+located at blackboard.geektown.de or have a look at the P.A.T.H. project page: 
+http://p-a-t-h.sourceforge.net
+
+Q: How can I support the P.A.T.H. project?
+A: You can send bug reports like described above or you can add some code. 
+Please read section [4] if you want to help developing the project.
+
+Q: What is the General Public License?
+A: Please have a look at the file LICENSE.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+[2] Installation
+
+Q: How to install P.A.T.H.?
+A: Please read the file INSTALL!
+
+Q: What do I need to install to use the P.A.T.H. project?
+A: You need the pcap library [ www.tcpdump.org ] and the following Perl 
+modules available at www.cpan.org: Net::RawIP, Net::Pcap, Netpacket, 
+Data::Hexdumper. 
+You also need XFree86 and the development files of Xlibs and the Tk perl 
+module in order to use the gui versions!
+Of course you need a Perl interpreter. It should be 5.6.0 or above.
+
+Q: Where can I get the Perl modules?
+A: Download them from www.cpan.org (e.g. http://www.cpan.org/modules/by-module/)
+
+Q: On which OS can I install P.A.T.H.?
+A: I have tested P.A.T.H. on Linux (RedHat, SuSE, Debian) and FreeBSD. It 
+should also install on Mac OsX and other Unix-like operating systems supporting
+the required librarys and Perl.
+On Windows you will get the problem that the required modules are only 
+available for Unix like systems, but maybe you can compile them on Windows 
+using cygwin. You can get it here: http://cygwin.com
+And here you can download a Perl interpreter for Windows: 
+http://www.activestate.com
+Please send me a small report if you can run P.A.T.H. using cygwin or post it 
+to the P.A.T.H. forum.
+
+Q: There is more than one Tk module. Which do I have to install?
+A: You have to install the module Tk. But it's easier to do it this way: 
+perl -MCPAN -eshell
+cpan> install Tk
+Or if you are lazy type perl -MCPAN -e 'install Tk' ;)
+
+Q: How to install the Perl modules?
+A: Either download them from CPAN and install them like described in the 
+Modules Readme or use the CPAN module: 
+perl -MCPAN -eshell
+cpan> install <module>
+Or the shorter way perl -MCPAN -e 'install <module>'
+
+Q: I called perl -MCPAN -e 'force install <module>' and now I
+have to configure something?
+A: You are using CPAN for the first time. Dont care, just say no. ;)
+
+Q: The installation of a Perl module fails! What shall I do?
+A: Try to skip the modules function test. Most of the modules will work 
+without passing all the tests.
+So try the following (as root of course):
+cd ~/.cpan/build/modulename
+make install
+Otherwise send me a bugreport by mail.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+[3] Usage
+
+Q: I get the error: bad interpreter: No such file or directory
+A: Either the path to the perl interpreter is wrong or you have not installed
+Perl. Please check if you have installed perl: whereis perl. All the scripts
+will expect the interpreter to be in /usr/bin/perl, maybe you have to create
+a symlink (man ln).
+
+Q: How can I start the GUI version of a tool?
+A: Use the parameter --gui to do so.
+
+Q: How can I configure the tools?
+A: All tools are configure the same way.
+-h target-ips 
+(Can be a range like 192.168.1.1-192.168.1.254)
+(Can also be a list 192.168.1.1,192.168.1.53)
+-s source-ips (like target-ips)
+-p port (Pass a list or range as described above)
+-c connection (e.g. 192.168.1.1-192.168.1.2)
+For more information use the parameter --help.
+
+Q: What are EUID 0 privileges and why do I need them?
+A: EUID 0 are root privileges and you need them because you need to be root 
+to set the network interface into the promiscous mode or to open a raw socket 
+to send self constructed packets.
+
+Q: I get sendto() at /usr/local/lib/perl/5.8.2/Net/RawIP.pm line 550?
+A: You are not allowed to send the constructed packet. Please check if you
+are running a packet filtering program (Linux: iptables -L or ipchains -L / 
+FreeBSD: ipfw list). If that's not the case and you are trying to send an
+icmp redirect packet check if your system allows you to send redirect
+messages e.g. look at /proc/sys/net/ipv4/conf/all/*redirect or at
+sysctl net.ipv4.conf.default.send_redirects. 
+Try sysctl -w net.inet.icmp.drop_redirect=0 under FreeBSD.
+
+Q: What are pcap expression?
+A: With pcap you can specify exactly which packets should be sniffed e.g.
+host 192.168.1.1 and port 21 or port 23 and tcp to sniff ftp and telnet
+traffic coming from or being send to 192.168.1.1. Have a look at the
+tcpdump's man page to learn more about the pcap expression language.
+
+Q: What documentation should I read before using P.A.T.H.?
+A: Before using the packetgenerator IP-Packet you should have an idea how the 
+TCP/IP protocol looks like. There are many documents out there in the net. I 
+recommend that you have a look at the hijackersguide written by Stefan Krecher.
+You'll find it in the docs directory. If you have got enough time you should 
+also read the other documents located in the docs directory. 
+No... that's not a bad joke... ;)
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+[4] Developer question
+
+Q: How can I help developing the project?
+A: Please have a look at the TODO files.
+
+Q: Where can I find information about the P.A.T.H Perl modules?
+A: There is a README.developer file. You should read it. Every module has 
+it's own POD documentation to describe it's methods.
+
+:[EOF

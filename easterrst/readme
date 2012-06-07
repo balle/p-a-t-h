@@ -1,0 +1,54 @@
+            ______       _______       _______      _______     
+           |   __ \     |   _   |     |_     _|    |   |   |    
+           |    __/ __  |       | __    |   | __   |       | __ 
+           |___|   |__| |___|___||__|   |___||__|  |___|___||__|
+
+            Perl         Advanced        TCP        Hijacking
+
+                    The hijackers P.A.T.H. to galaxy
+                    [http://p-a-t-h.sourceforge.net]
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Easterrst  --  Advanced RST Daemon
+
+Programmed by Stefan Krecher and Bastian Ballmann
+Last Update: 29.11.2003
+Licensed under GPL
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+---:[ Requires
+
+- Perl
+- NetPacket modules [ http://www.cpan.org ]
+- Net::Pcap [ http://www.cpan.org ]
+- Net::RawIP [ http://www.cpan.org ]
+- Tk module [ http://www.cpan.org ]
+- libpcap [ http://www.tcpdump.org ]
+
+
+---:[ Disclaimer
+
+THIS PROJECT WAS DEVELOPED FOR TESTING AND DEMONSTRATION PURPOSE ONLY! 
+THE AUTHORS DONT FEEL RESPONSIBLE FOR ILLEGAL ABUSE OF THIS PIECE OF 
+SOFTWARE AND WE ADVICE YOU TO USE IT LEGALLY AND DO NOT BREAK THE LAW!
+
+
+---:[ Description
+
+easterrst is a RST daemon written in Perl.
+It contains a terminal and GUI interface written in Perl/Tk.
+This tool can reset a single connection between two hosts, all traffic to /
+from a host or simple all connections on the network by sending either a 
+spoofed RST or FIN packet. You can specify the port of connection that should 
+be resetted and it can only reset SYN packets instead of all packets.
+
+
+---:[ Installation
+
+If your system supports Perl just install the required modules and run 
+./easterrst.pl for the terminal version or ./easterrst.pl --gui to use the GUI 
+version of the tool.
+
+:[EOF

@@ -1,0 +1,38 @@
+            ______       _______       _______       _______     
+           |   __ \     |   _   |     |_     _|     |   |   |    
+           |    __/ __  |       | __    |   |   __  |       | __ 
+           |___|   |__| |___|___||__|   |___|  |__| |___|___||__|
+
+            Perl         Advanced        TCP         Hijacking
+
+                    The hijackers P.A.T.H. to galaxy
+                    [http://p-a-t-h.sourceforge.net]
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+How to install P.A.T.H.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+---:[ Requirements
+
+Libpcap [ http://www.tcpdump.org ]
+Perl interpreter
+If you want to you the GUI versions you need to install Tk and XFree86 (Xlibs)!
+
+NOTE: If you install the binary versions you also need to install the devel
+packages!
+
+---:[ Installation
+
+perl Makefile.PL
+make
+su
+make install clean
+This will install the P.A.T.H. modules and scripts.
+If your system lacks a required modules make will interrupt and give you
+an installation hint.
+If you have any problems installing the P.A.T.H. project please have a
+look at the FAQ!
+
+:[ EOF

@@ -1,0 +1,65 @@
+            ______       _______       _______      _______     
+           |   __ \     |   _   |     |_     _|    |   |   |    
+           |    __/ __  |       | __    |   | __   |       | __ 
+           |___|   |__| |___|___||__|   |___||__|  |___|___||__|
+
+            Perl         Advanced        TCP        Hijacking
+
+                    The hijackers P.A.T.H. to galaxy
+                    [http://p-a-t-h.sourceforge.net]
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Crazy Sniffer
+
+Programmed by Bastian Ballmann
+Last Update: 12.02.2004
+Licensed under the GPL
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+---:[ Requirements
+
+Perl
+NetPacket modules
+Net::Pcap
+Data::Hexdumper
+Libpcap
+
+
+---:[ Disclaimer
+
+THIS PROJECT WAS DEVELOPED FOR TESTING AND DEMONSTRATION PURPOSE ONLY! 
+THE AUTHORS DONT FEEL RESPONSIBLE FOR ILLEGAL ABUSE OF THIS PIECE OF 
+SOFTWARE AND WE ADVICE YOU TO USE IT LEGALLY AND DO NOT BREAK THE LAW!
+
+
+---:[ Description
+
+Crazysniffer is just another password and network sniffer for Linux.
+You can specify the network interface, dump the payload in ascii or hex,
+grep the packets payload using regular expressions like in ngrep or grep,
+use pcap expression and enable the password or telnet / mail session 
+sniffin mode. In the telnet or mail sniffing mode you will see all
+traffic like you are sitting in front of the telnet or mail client.
+The mail sniffin mode will sniff SMTP, POP3 and IMAP traffic and the password
+sniffing mode will collect telnet, ftp, pop3, smtp and imap usernames and
+passwords.
+Additionally you can specify if the TCP flags, sequence and acknowledgement
+numbers and window size should be dumped, save or load the configuration and 
+save the dump to a file.
+
+
+---:[ Installation
+
+If your system supports Perl just install the required modules and make sure 
+that you have also installed the libpcap library. You get it here 
+[http://www.tcpdump.org]
+
+
+---:[ Usage
+
+Run ./crazysniffer.pl --help to get help.
+Run ./crazysniffer.pl --gui to get the GUI version.
+
+:[EOF

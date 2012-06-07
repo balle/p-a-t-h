@@ -1,0 +1,237 @@
+            ______       _______       _______      _______     
+           |   __ \     |   _   |     |_     _|    |   |   |    
+           |    __/ __  |       | __    |   | __   |       | __ 
+           |___|   |__| |___|___||__|   |___||__|  |___|___||__|
+
+            Perl         Advanced        TCP        Hijacking
+
+                    The hijackers P.A.T.H. to galaxy
+                    [http://p-a-t-h.sourceforge.net]
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+P.A.T.H CHANGES
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+////[ Changes between 0.8 and 1.0 ]////
+
+- GUI updates
+- Lots of rewritten code
+- Debugged KNOWN_BUGS
+- XML config support
+
+[config.pm]
+
+- Removed the methods multisource, multitarget, multiport
+- check_address is now named check_ip
+- check_mac to check MAC addresses
+- get_target, get_source and get_port now returns an array
+
+[arp.pm]
+
+- Now constructs arp packets without using the libnet library
+- New function get_mac to determine the ethernet address of a local 
+  network interface
+
+[feed_snort]
+
+- Support for multiple source and target ips
+
+[ip-packet]
+
+- Can now also be configured via parameters
+
+[arpredir]
+
+- Can now lookup the targets and local mac address
+- Can also spoof a whole connection
+- Can now spoof all arp requests like arpd
+
+[crazysniffer]
+
+- New parameter -P for only printing the payload
+- New parameter -q for not printing the payload
+- New parameter -e to grep payload using regular expressions
+- New parameter -n to sniff only a number of packets
+
+
+////[ Changes between 0.7 and 0.8 - 09.11.2003 ]////
+
+[arpredir]
+
+- Added the new tool arpredir
+
+[modules]
+
+- Added new ARP module to create ARP packets in Perl
+
+[IP-Packet]
+
+- ARP support
+- Bruteforce ports + ICMP types (hijack module + IP-Packet)
+
+[Installation]
+
+- P.A.T.H. is now installed via Makefiles
+
+
+////[ Changes between 0.6 and 0.7 - 22.12.2002 ]////
+
+[easterrst]
+
+- Updated GUI version
+- Updated errorhandling
+- reset_syn_only mode debugged
+
+
+[feed_snort]
+
+- Debugged rule parser
+- Updated GUI version
+- Updated errorhandling
+
+
+[crazysniffer]
+
+- Completly new GUI version
+- Debugged save traffic function
+- Debugged Password Sniffin mode
+- Can now save and load configuration
+- Can now dump TCP flags and window size
+
+
+[icmpredir]
+
+- Fixed a little bug in loading GUI version
+- GUI redesign
+- Updated errorhandling
+
+
+[hijackd]
+
+- Debugged GUI version
+
+
+[hijack.pm]
+
+- Removed warning module
+
+
+[config.pm]
+
+- Removed warning module
+- Updated check() and check_ip() methods
+- Implemented new function check_address
+
+
+
+////[ Changes between 0.5 and 0.6 - 14.12.2002 ]////
+
+[Icmpredir]
+
+- Added the new tool Icmpredir
+
+
+[Crazysniffer] 
+
+- It is possible to specify a pcap expression in password, 
+telnet or mail sniffin mode
+
+
+
+/////[ Changes between 0.4 and 0.5 - 03.12.2002 ]/////
+
+[General]
+
+- There is an install script to install all necessary Perl modules
+
+
+[Hijackd] 
+
+- Can now automatically hijack different hosts, ports and
+protocolls and only sniffs traffic that should be hijacked.
+- There is a buggy GUI version and a better default infiltrate string
+
+
+[Config.pm] 
+
+- Has a new method pcap() to create a pcap expression of your config
+
+
+[Hijack.pm] 
+
+- The methods hijacked() and is_hijacked() now support more than one 
+connection
+- Better support of statefull and stateless mode
+- Debugged reset methods
+- Updated POD documentation
+
+
+[Easterrst] 
+
+- Only sniffs traffic which should be reseted
+
+
+[Crazysniffer] 
+
+- Debugged Telnet Sniffin Mode
+- Can now sniff emails (SMTP,POP3,IMAP)
+- Can now optionally dump TCP sequence and acknowledgement numbers
+
+
+
+///////[ Changes between 0.3 and 0.4 - 08.09.2002 ]///////
+
+[Hijackd] 
+
+- Hijackd is a daemon for automatically hijacking plain protocols.    
+Currently only telnet is supported and there is no GUI Version of that tool.    
+
+
+[Developer Notes] 
+
+All the hijacking stuff is now stored in the hijack.pm module
+
+
+
+//////[ Changes between 0.2 and 0.3 - 28.07.2002 ]/////// 
+
+[Feed SN0RT] 
+
+- Now supports the following protocols: IP, TCP, UDP, ICMP
+- Can replace SN0RT variables like $HTTP_PORTS
+- Can be configured via configfile
+- There is a GUI version of feed_snort
+
+
+[Config.pm] 
+
+- Can now handle multiple source ip adresses (list or range)
+- Can create a config object out of the common P.A.T.H. config files
+- Can store / receive all options of a packet.
+
+
+[packet.pl] 
+
+- Packet.pl is a library to create a packet (Net::RawIP object) using a 
+config object or a reference to a config hash.
+
+
+
+//////[ Changes between 0.1 and 0.2 - 26.07.2002 ]//////
+
+[General]
+
+- All scripts now support the main configuration module config.pm
+
+
+[crazysniffer]
+
+- A simple GUI has been developed
+
+
+[Feed Snort] 
+
+- Version 0.1 has been implemented into the project
+

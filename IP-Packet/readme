@@ -1,0 +1,68 @@
+            ______       _______       _______      _______     
+           |   __ \     |   _   |     |_     _|    |   |   |    
+           |    __/ __  |       | __    |   | __   |       | __ 
+           |___|   |__| |___|___||__|   |___||__|  |___|___||__|
+
+            Perl         Advanced        TCP        Hijacking
+
+                    The hijackers P.A.T.H. to galaxy
+                    [http://p-a-t-h.sourceforge.net]
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+IP-Packet
+
+Programmed by Bastian Ballmann
+Last Update: 16.01.2004
+Licensed under GPL
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+---:[ Requires
+
+- Perl
+- Net::RawIP Module [ http://www.cpan.org ]
+- TK module [ http://www.cpan.org ]
+- libpcap [ http://www.tcpdump.org ]
+
+
+---:[ Disclaimer
+
+THIS PROJECT WAS DEVELOPED FOR TESTING AND DEMONSTRATION PURPOSE ONLY! 
+THE AUTHORS DONT FEEL RESPONSIBLE FOR ILLEGAL ABUSE OF THIS PIECE OF 
+SOFTWARE AND WE ADVICE YOU TO USE IT LEGALLY AND DO NOT BREAK THE LAW!
+
+
+---:[ Description
+
+ip-packet is a TCP / UDP / ICMP / ARP Packetgenerator written in Perl. 
+It contains a GUI frontend, an interactive and a parameter driven shell 
+interface.
+You can create packets using (nearly) all available header options of the
+chosen protocol.
+Additionally you can bruteforce some header options like source and destination
+ports and icmp code and type and use a config file to configure your packet. 
+
+
+---:[ Installation
+
+If your system supports Perl just install the required modules and run
+./ip-packet.pl --help for help.
+
+
+---:[ Usage
+
+To use the GUI version run ip-packet.pl --gui
+To use the interactive shell interface run ip-packtet.pl --interactive
+You can speicfy a config file using --conf
+Execute ip-packet.pl --params to get a list of all params, --help will
+provider you with some help.
+
+
+---:[ The documentation
+
+The RFCs of the protocols can be found in the doc directory.
+Additionally there is a short text about the TCP flags and ICMP types.
+Or read the hijackerguide by Stefan Krecher.
+
+:[EOF

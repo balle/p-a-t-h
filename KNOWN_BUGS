@@ -1,0 +1,28 @@
+
+            ______       _______       _______       _______     
+           |   __ \     |   _   |     |_     _|     |   |   |    
+           |    __/ __  |       | __    |   |   __  |       | __ 
+           |___|   |__| |___|___||__|   |___|  |__| |___|___||__|
+
+            Perl         Advanced        TCP         Hijacking
+
+                    The hijackers P.A.T.H. to galaxy
+                    [http://p-a-t-h.sourceforge.net]
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+P.A.T.H. KNOWN BUGS
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+[ hijack.pl ]
+
+gui version crashes if you choose a not upped network interface
+
+[ crazysniffer.pl ]
+
+gui version crashes if you choose a not upped network interface
+
+[ hijack.pm ]
+
+logged_in is too buggy to use it anyway...

